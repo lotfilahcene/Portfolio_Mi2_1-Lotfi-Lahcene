@@ -1,0 +1,28 @@
+body{
+	
+}
+#dambord{
+width: 400px;
+height: 400px;	
+border: blue double ;
+	
+}
+
+
+
+.wit{
+	background-color: white;
+	height: 40px;
+	width: 40px;
+	float: left;
+}
+.zwart{
+	background-color: black;
+	height: 40px;
+	width: 40px;
+	float: left;
+}
+
+
+
+ 
