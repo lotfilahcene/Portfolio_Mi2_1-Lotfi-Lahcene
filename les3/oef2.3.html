@@ -1,0 +1,53 @@
+ 
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<meta charset="utf-8" >
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+		<meta name="viewport" content="width=device-width, height=device-height" />
+		<title>Les 3</title>
+</head>
+	
+	<body>
+	<style type="text/css">
+		.titel{
+				text-align: center;
+				line-height: 200px;
+				font-size: 1px;
+				color: #00b;
+		}
+	</style>			
+	<div id="inhoud" class="titel">
+		</div>
+		
+		<script type="text/javascript" >
+		
+			"use strict";
+			
+			$(document).ready(
+			
+				function()
+				{
+					$("#inhoud").html("Starten met jQuery");
+					$("#inhoud").animate(
+						{fontSize: "90px"},
+						2500
+					
+					);
+				});
+			
+			
+			
+		</script>
+		
+		
+	</body>
+		
+</html>
+
+
+
+
+ 
