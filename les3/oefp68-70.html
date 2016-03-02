@@ -1,0 +1,62 @@
+ 
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+
+		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script>
+		"use strict";
+		$(document).ready(function () {
+		$("body>div>div>ul>li.actief").prev().css("color", "#aaa#);
+												  $("ul ul>li.actief").prevAll().css("color", "red");
+			$("body>div>div>ul>li.actief").children().css("color", "green");
+			
+			$("body>div>div>ul>li.actief").siblings().css("text-decoration", "underline");
+			$("ul ul>li.actief").nextAll().css("font-weight", "bold");
+		});
+		</script>
+		
+		<meta charset="utf-8" >
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+		<meta name="viewport" content="width=device-width, height=device-height" />
+		<title>Les 3</title>
+</head>
+	
+	<body>
+	<div>
+		<header>
+		<h1>vb p68-70</h1>
+		</header>
+		
+		<div>
+			<ul>
+				<li> Hoofstuk1</li>
+				<li class="actief">Hoofdstuk2
+				<ul>
+					<li>paragraaf1</li>
+					<li>paragraaf2</li>
+					<li class="actief">Paragraaf3</li>
+					<li>Paragraaf4</li>
+					<li>paragraf5</li>
+				</ul>
+				</li>
+				<li>Hoofdstuk 3</li>
+				<li>Hoofdstuk 4</li>
+				
+			</ul>
+		</div>
+		<footer>
+		<p>&copy; Copyright by steven</p>
+		</footer>
+	</div>
+		
+		
+	</body>
+		
+</html>
+
+
+
+
+ 
