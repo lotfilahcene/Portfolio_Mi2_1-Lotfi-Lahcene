@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+
+		<title>oef3.1</title>
+		<meta name="description" content="">
+		<meta name="author" content="Lotfi L">
+
+
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+  <script type="text/javascript">
+  		$(document).ready(
+  			function(){
+  							$("#inhoud").html("<li>Parijs 25 graden</li><li>Berlijn 25 graden</li><li>Amsterdam 30 graden</li><li>Engeland 15 graden</li><li>Brussel 10 graden</li><li>Herzele 13 graden</li><li>Borsbeke 25 graden</li>");
+$("#31 h2").html(function() {
+
+					var aantal = $("li").length;
+					$("body").append("Aantal plaatsen " + aantal);
+										$("h2").appendTo("Aantal plaatsen " + aantal);
+
+					
+					
+					
+					var plaats = $("li").last().detach();
+
+					
+				});
+
+
+
+
+});
+  	
+  	
+  	
+  </script>
+
+
+
+	</head>
+
+	<body>
+<div id="31">
+								<h2>Plaatsen</h2>
+								<ul id="inhoud">
+								
+								</ul>
+							</div>
+	</body>
+</html>
