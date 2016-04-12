@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	
+	<script src="js/jquery-1.11.0.min.js"></script>
+
+<style type="text/css">
+	
+	#fotos div.frame{
+		
+		float:left;
+		width:300px;
+		height:240px;
+		background:#ccc;
+		padding:0px;
+		margin:10px;
+	}
+	
+	#fotos.image img{
+		
+		width:100%;
+	}
+	
+	#fotos.image img{
+		
+		width:300px;
+		height:210px;
+		overflow:hidden;
+		background:#fff;
+	}
+	
+	#fotos h2{
+		
+		font-family: arial, sans-serif;
+		color:#333;
+		font-size:.9em;
+	}
+	
+	p{
+		
+		clear:both;
+	}
+	
+</style>
+
+  <title>dynamiek&data</title>
+
+<script >
+			$(document).ready(function() {
+				$("#zoek").click(function zoekFotos() {
+					var zoekterm = $("#zoekterm").val();
+					var flickrUrl = "http://api.flickr.com/services/feeds" + "/photos_public.gne?format=json&tags=";
+					$.ajax({
+						dataType : 'json',
+						type : 'GET',
+						url : flickrUrl + zoekterm + '&jsoncallback=?',
+						success : verwerkJSON
+					});
+				});
+
+			});
+
+			function verwerkJSON(response) {
+				$("#fotos").html("");
+				for (var i = 0; i < response.items.length; i++) {
+					var foto = response.items[i];
+					var html = "<div class='frame'><div class='image'> <a href='" + foto.link + "'><img src='" + foto.media.m + "' alt='" + foto.title + "'></a></div><h2>" + foto.title + "</h2></div>";
+					$("#fotos").append(html);
+				}
+
+				$("#bron").attr("href", response.link).text("Bron : Flickr");
+				$("#titel").text(response.title);
+
+			}
+		</script>
+
+</head>
+
+<body>
+	
+	<div>
+			<header>
+				<h1>jQuery - de basis - foto's</h1>
+			</header>
+			<section>
+				<p>
+					zoekterm :
+					<input type="text" id="zoekterm">
+					<input type="button" value="zoek" id="zoek">
+					<br>
+					<strong id="titel"> </strong>
+				</p>
+				<div id="fotos">
+
+				</div>
+				<p>
+					<a id="bron" href=""> </a>
+				</p>
+			</section>
+
+		</div>
+
+</body>
+</html>
