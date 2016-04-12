@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>les6</title>
+  <meta name="description" content="" />
+  <meta name="author" content="Lotfi L" />
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+<style type="text/css">
+	body{
+		background: grey;
+		color:#ccc;
+		text-align:center;
+	}
+	ul.fotolijst{
+		list-style-type : none;
+		padding:0;
+		margin:0;
+		text-align:center;
+		
+	}
+	ul.fotolijst li{
+		float:left;
+		width:100px;
+		margin: 0px 1px 0px 1px;
+	}
+	ul.fotolijst li img{
+
+		
+		border: 2px solid #777;
+		padding: 0px;
+		border-radius: 5px;
+		
+	}
+	#galerij{
+		text-align:center;
+	}
+	#frame{
+		width:512px;
+		height:342px;
+		margin: 10px 0px 10px 0px;
+		border: 3px solid #ccc;
+		overflow:hidden;
+		border-radius: 5px;
+
+	}
+</style>
+ <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+	var fotoArray=[
+		"p/2012/03/73133.jpg"
+		,"p/2012/03/73096.jpg"
+		,"p/2012/03/72940.jpg"
+		,"p/2012/03/72922.jpg"
+		,"p/2012/03/72913.jpg"
+		,"p/2012/03/72492.jpg"
+	];
+	var urlPrefix ="http://weerfoto.buienradar.nl/";
+
+	$(document).ready(function(){
+		$("#galerij").html("<div id='frame'><img /></div>"+
+					"<ul class='fotolijst'></ul>");
+		
+		$("#frame img").attr("src", urlPrefix + fotoArray[0]);
+		
+		for(var i=0;i<fotoArray.length; i++){
+			var foto = fotoArray[i];
+			var bron = urlPrefix+foto;
+			
+			var thumb = bron.replace(".jpg","_t1.jpg");
+			
+		
+			$(".fotolijst").append("<li><a href='#' rel='"+i+
+											"'><img src='"+thumb+"'></a></li>");
+
+			
+		}
+		
+		function soFadeImg(){
+			
+			var index = parseInt($(this).attr("rel"));
+			var bron = urlPrefix + fotoArray[index];
+			$("#frame").css("background-image", "url("+$("#frame img").attr("src")+")");
+			$("#frame").html("<img style='display:none;'>");
+			$("#frame img").attr("src", bron);
+			$("#frame img").fadeIn("slow");
+		}
+		
+		$(".fotolijst a").on("click", soFadeImg);
+		
+		$(".fotolijst a").on("mouseenter", soFadeImg);
+					
+	});
+	
+</script>
+</head>
+
+<body>
+  <div>
+    <header>
+    	
+      <h1>jQuery - de Basis - oefening5.2 : Fotogalerij</h1>
+
+    </header>
+    
+    <div id="galerij"> </div>
+
+   
+  </div>
+</body>
+</html>

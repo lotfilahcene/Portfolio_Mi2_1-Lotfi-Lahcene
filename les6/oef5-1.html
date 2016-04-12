@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  
+
+  <title>oefening5.1</title>
+  <meta name="description" content="">
+  <meta name="author" content="Lotfi L">
+
+</head>
+
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.js">
+  
+  </script>
+  
+  <script type="text/javascript">
+  	$(document).ready(
+  		function(){
+  			$("#kleiner").click(function(){
+  				var grootte = parseFloat($("p").css("font-size"));
+  				$("p").css("font-size",(.8 * grootte) + "px");
+  			
+  			
+  		});
+  	$("#Groter").click(function(){
+  		var grootte = parseFloat($("p").css("font-size"));
+  		$("p").css("font-size",(1.2 * grootte) + "px");
+  	});
+  	
+  	});
+  	
+  	
+  </script>
+
+<body>
+	
+	<h1>Jquery de basis</h1>
+
+<p>Dit is een test</p>
+
+<div id="paginafuncties">
+	Tekst:
+	<button id="kleiner">Kleiner</button>
+	<button id="Groter">Groter</button>
+	
+</div>
+
+</body>
+</html>
