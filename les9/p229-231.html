@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+
+		<title>Oef p229-231</title>
+		<meta name="description" content="oef229-231" />
+		<meta name="author" content="Lotfi L" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css"/>
+		<script  type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+		
+		
+	</head>
+
+	<body>
+
+		<div data-role="page" id="home">
+
+			<div data-role="header">
+
+				<h1> Stel weeralert in </h1>
+
+			</div>
+
+			<div data-role="content">
+				<div data-role="content">s
+
+					<form action="#" method="get">
+						<div data-role="fieldcontain">
+
+							<label for="email"> Email adres: </label>
+							<input type="text" name="email" id="email" value="" />
+
+						</div>
+
+						<div data-role="controlgroup">
+							<legend>
+								Voor welk weer ?
+							</legend>
+							
+							<input type="checkbox" name="regen" id="regen" class="custom"/>
+							<label for="regen">regen</label>
+
+							<input type="checkbox" name="sneeuw" id="sneew" class="custom"/>
+							<label for="sneeuw">sneew</label>
+							
+							<input type="checkbox" name="zon" id="zon" class="custom"/>
+							<label for="zon">Zon</label>
+
+						</div>
+
+						<div data-role="fieldcontain">
+
+							<label for="minuten"> Aantal minuten vooraf: </label>
+							<input type="range" name="minuten" id="minuten" value="1" min="1" max="60" />
+						</div>
+
+						<div data-role="fieldcontain">
+
+							<label for="actief"> Actief: </label>
+							<select name="actief" id="actief" data-role="slider">
+								<option value="off">Nee</option>
+								<option value="on">Ja</option>
+							</select>
+						</div>
+
+						<div data-role="fieldcontain">
+
+							<label for="adres"> Voor welk adres: </label>
+
+							<select name="store" id="store">
+								<option value="thuis">Thuis</option>
+								<option value="werk">Werk</option>
+								<option value="vakantie">Vakantie</option>
+							</select>
+
+						</div>
+
+						<div class="ui-body ui-body-b">
+							<fieldset class="ui-grid-a">
+								<div class="ui-block-a">
+									<button type="submit" data-theme="d">
+										Annuleer
+									</button>
+
+								</div>
+
+								<div class="ui-block-b">
+									<button type="submit" data-theme="a">
+										Bewaar
+									</button>
+								</div>
+
+							</fieldset>
+
+						</div>
+
+				</div>
+
+			</div>
+
+	</body>
+</html>
